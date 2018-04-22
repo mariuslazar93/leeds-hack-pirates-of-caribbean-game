@@ -53,12 +53,12 @@ function preload() {
     'assets/music/overworld.ogg',
     'assets/music/overworld.mp3'
   ]);
-  this.load.image('sky', '/assets/sky.png');
-  this.load.image('treasure', '/assets/treasure.png');
-  this.load.image('palm', '/assets/palm.png');
-  this.load.image('heart', '/assets/heart.png');
-  this.load.image('enemy-pirate', '/assets/pirate.png');
-  this.load.spritesheet('my-pirate', '/assets/dude.png', { frameWidth: 32, frameHeight: 48 });
+  this.load.image('sky', 'assets/sky.png');
+  this.load.image('treasure', 'assets/treasure.png');
+  this.load.image('palm', 'assets/palm.png');
+  this.load.image('heart', 'assets/heart.png');
+  this.load.image('enemy-pirate', 'assets/pirate.png');
+  this.load.spritesheet('my-pirate', 'assets/dude.png', { frameWidth: 32, frameHeight: 48 });
 }
 
 function create() {

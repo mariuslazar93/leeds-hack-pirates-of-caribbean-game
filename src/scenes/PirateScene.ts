@@ -31,7 +31,7 @@ function preload() {
   ]);
   this.load.image('sky', ASSETS_PATH + 'assets/sky.png');
   this.load.image('treasure', ASSETS_PATH + 'assets/treasure.png');
-  this.load.image('palm', ASSETS_PATH + 'assets/palm2.png');
+  this.load.image('palm', ASSETS_PATH + 'assets/palm.png');
   this.load.image('heart', ASSETS_PATH + 'assets/heart.png');
   this.load.image('enemy-pirate', ASSETS_PATH + 'assets/pirate.png');
   this.load.spritesheet('my-pirate', ASSETS_PATH + 'assets/dude.png', { frameWidth: 32, frameHeight: 48 });

@@ -21,6 +21,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'build'),
+    publicPath: '/leeds-hack-pirates-of-caribbean-game/build/',
     filename: 'js/bundle.js'
   },
   plugins: [

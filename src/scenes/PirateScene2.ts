@@ -3,9 +3,9 @@ import config from '../config';
 
 const { WIDTH, HEIGHT, LIVES, RETRY_PLAY_TIMEOUT_MS } = config;
 
-const ENEMIES_COUNT = 3;
-const PALMS_COUNT = 10;
-const TREASURES_COUNT = 3;
+const ENEMIES_COUNT = 10;
+const PALMS_COUNT = 20;
+const TREASURES_COUNT = 10;
 let platforms;
 let pirates;
 let player;
@@ -26,6 +26,12 @@ let currentInsult;
 let palms;
 let currentScene;
 
+function init(cfg) {
+  console.log('config:',cfg);
+  if (cfg && cfg.livesLeft) {
+    livesLeft = cfg.livesLeft;
+  }
+}
 
 function preload() {
   this.load.audio('water', [
@@ -142,8 +148,8 @@ function collectTreasure(player, treasure) {
   scoreText.setText('Score: ' + score + ' / ' + TREASURES_COUNT);
 
   if (treasures.countActive(true) === 0) {
-    this.scene.stop('pirateScene');
-    this.scene.launch('pirateScene2', { livesLeft });
+    this.scene.stop('pirateScene2');
+    this.scene.launch('successScene');
   }
 }
 
@@ -172,7 +178,7 @@ function loseLife() {
   }
 
   if (livesLeft === 0) {
-    this.scene.stop('pirateScene');
+    this.scene.stop('pirateScene2');
     this.scene.launch('failScene');
   }
 }
@@ -200,7 +206,7 @@ function tryResumingPlay() {
     .then(response => response.data)
     .then((data) => {
       if (data.dead) {
-        this.scene.stop('pirateScene');
+        this.scene.stop('pirateScene2');
         this.scene.launch('failScene');
         this.gameOver = true;
       }
@@ -280,9 +286,10 @@ function restart() {
 
 
 export default {
-  key: 'pirateScene',
+  key: 'pirateScene2',
   active: false,
   visible: false,
+  init,
   preload,
   create,
   update

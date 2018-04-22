@@ -53,12 +53,12 @@ function preload() {
     'assets/music/overworld.ogg',
     'assets/music/overworld.mp3'
   ]);
-  this.load.image('sky', 'https://mariuslazar93.github.io/leeds-hack-pirates-of-caribbean-game/build/assets/sky.png');
-  this.load.image('treasure', 'https://mariuslazar93.github.io/leeds-hack-pirates-of-caribbean-game/build/treasure.png');
-  this.load.image('palm', '.https://mariuslazar93.github.io/leeds-hack-pirates-of-caribbean-game/build/palm.png');
-  this.load.image('heart', 'https://mariuslazar93.github.io/leeds-hack-pirates-of-caribbean-game/build/heart.png');
-  this.load.image('enemy-pirate', 'https://mariuslazar93.github.io/leeds-hack-pirates-of-caribbean-game/build/assets/pirate.png');
-  this.load.spritesheet('my-pirate', 'https://mariuslazar93.github.io/leeds-hack-pirates-of-caribbean-game/build/dude.png', { frameWidth: 32, frameHeight: 48 });
+  this.load.image('sky', ASSETS_PATH + '/assets/sky.png');
+  this.load.image('treasure', ASSETS_PATH + '/assets/treasure.png');
+  this.load.image('palm', ASSETS_PATH + '/assets/palm.png');
+  this.load.image('heart', ASSETS_PATH + '/assets/heart.png');
+  this.load.image('enemy-pirate', ASSETS_PATH + '/assets/pirate.png');
+  this.load.spritesheet('my-pirate', ASSETS_PATH + '/assets/dude.png', { frameWidth: 32, frameHeight: 48 });
 }
 
 function create() {

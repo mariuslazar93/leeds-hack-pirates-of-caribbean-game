@@ -9,7 +9,8 @@ var phaser = path.join(phaserModule, 'src/phaser.js')
 var definePlugin = new webpack.DefinePlugin({
   __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'false')),
   WEBGL_RENDERER: true,
-  CANVAS_RENDERER: true
+  CANVAS_RENDERER: true,
+  ASSETS_PATH: JSON.stringify("https://mariuslazar93.github.io/leeds-hack-pirates-of-caribbean-game/build/")
 })
 
 module.exports = {

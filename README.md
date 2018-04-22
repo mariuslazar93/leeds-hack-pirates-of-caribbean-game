@@ -1,7 +1,4 @@
-# Phaser 3 Typescript Webpack Boilerplate
-![screenshot](https://i.imgur.com/XXyX8KO.png)
-![screenshot](https://i.imgur.com/YuzMdYi.png)
-![screenshot](https://i.imgur.com/GIdIa5q.png)
+# Phaser 3 Pirates of Caribbean
 
 # Setup
 You’ll need to install a few things before you have a working copy of the project.
@@ -52,8 +49,6 @@ This will optimize and minimize the compiled bundle.
 
 ## Credits
 
-This work is based off of several existing repos:
+This work is based off of a boilerplate project:
 
-https://github.com/nkholski/phaser3-es6-webpack
-
-https://github.com/lean/phaser-es6-webpack
+https://github.com/troyedwardsjr/phaser3-typescript-webpack

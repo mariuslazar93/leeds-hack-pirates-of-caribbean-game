@@ -31,7 +31,7 @@ function preload() {
   ]);
   this.load.image('sky', ASSETS_PATH + 'assets/sky.png');
   this.load.image('treasure', ASSETS_PATH + 'assets/treasure.png');
-  this.load.image('palm', ASSETS_PATH + 'assets/palm.png');
+  this.load.image('palm', ASSETS_PATH + 'assets/palm2.png');
   this.load.image('heart', ASSETS_PATH + 'assets/heart.png');
   this.load.image('enemy-pirate', ASSETS_PATH + 'assets/pirate.png');
   this.load.spritesheet('my-pirate', ASSETS_PATH + 'assets/dude.png', { frameWidth: 32, frameHeight: 48 });
@@ -139,10 +139,8 @@ function collectTreasure(player, treasure) {
   scoreText.setText('Score: ' + score + ' / ' + TREASURES_COUNT);
 
   if (treasures.countActive(true) === 0) {
-    this.physics.pause();
-    player.setTint(0x00ff00);
-    player.anims.play('turn');
-    gameOver = true;
+    this.scene.stop('pirateScene');
+    this.scene.launch('successScene');
   }
 }
 
@@ -173,7 +171,6 @@ function loseLife() {
 function pirateFight() {
   console.log('pirate collide... begin pirate fight');
 
-
   this.physics.pause();
   player.anims.play('turn');
 
@@ -194,6 +191,8 @@ function tryResumingPlay() {
     .then(response => response.data)
     .then((data) => {
       if (data.dead) {
+        this.scene.stop('pirateScene');
+        this.scene.launch('failScene');
         this.gameOver = true;
       }
 

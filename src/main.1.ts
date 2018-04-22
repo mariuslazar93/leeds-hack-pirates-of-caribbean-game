@@ -2,6 +2,8 @@ import 'phaser';
 import config from './config';
 import bootScene from './scenes/BootScene';
 import pirateScene from './scenes/PirateScene';
+import failScene from './scenes/FailScene';
+import successScene from './scenes/SuccessScene';
 
 const gameConfig: GameConfig = {
   type: Phaser.AUTO,
@@ -13,7 +15,7 @@ const gameConfig: GameConfig = {
       debug: false
     }
   },
-  scene: [bootScene, pirateScene]
+  scene: [bootScene, pirateScene, failScene, successScene]
 };
 
 const game = new Phaser.Game(gameConfig);

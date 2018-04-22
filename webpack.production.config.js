@@ -21,7 +21,6 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'build'),
-    publicPath: './',
     filename: 'js/bundle.js'
   },
   plugins: [
@@ -40,16 +39,6 @@ module.exports = {
       template: './src/index.html',
       chunks: ['vendor', 'app'],
       chunksSortMode: 'manual',
-      minify: {
-        removeAttributeQuotes: true,
-        collapseWhitespace: true,
-        html5: true,
-        minifyCSS: true,
-        minifyJS: true,
-        minifyURLs: true,
-        removeComments: true,
-        removeEmptyAttributes: true
-      },
       hash: true
     })
   ],

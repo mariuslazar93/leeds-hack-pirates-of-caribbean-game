@@ -201,13 +201,14 @@ function tryResumingPlay() {
     .then((data) => {
       console.log('data:', data)
       if (data.dead) {
-        this.scene.stop('pirateScene');
-        this.scene.launch('failScene');
+        currentScene.scene.stop('pirateScene');
+        currentScene.scene.launch('failScene');
         this.gameOver = true;
       }
 
       if (data.fight_finished) {
-        fightResultSuccessText.setText('You have won the battle! Keep playing...');
+        const previousResult = data.fight_steps_successful[data.fight_steps_successful.length - 1];
+        showFightStatus(previousResult);
         insultText.setText('');
         comebackText.setText('');
         currentScene.physics.resume();

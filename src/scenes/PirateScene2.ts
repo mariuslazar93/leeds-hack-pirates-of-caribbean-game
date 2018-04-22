@@ -206,8 +206,8 @@ function tryResumingPlay() {
     .then(response => response.data)
     .then((data) => {
       if (data.dead) {
-        this.scene.stop('pirateScene2');
-        this.scene.launch('failScene');
+        currentScene.scene.stop('pirateScene2');
+        currentScene.scene.launch('failScene');
         this.gameOver = true;
       }
 

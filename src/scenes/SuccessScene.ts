@@ -16,6 +16,7 @@ function create() {
   this.congratsText = this.add.text(config.WIDTH / 2 - 100, config.HEIGHT/2 + 39, message, { fontSize: '24px', fill: '#aa0000', backgroundColor: '#fff' });
 
   this.input.once('pointerdown', function () {
+    this.scene.stop('successScene');
     this.scene.launch('pirateScene');
   }, this);
 }

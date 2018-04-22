@@ -252,12 +252,12 @@ function showInsultAndComeBacks(insult, comebacks) {
 
 function showFightStatus(hasWon) {
   if (hasWon) {
-    fightResultSuccessText.setText('You have won this round! Let\'s try another one...');
+    fightResultSuccessText.setText('You have won the round! Let\'s try another one...');
     fightResultFailText.setText('');
   } else {
     loseLife();
     fightResultSuccessText.setText('');
-    fightResultFailText.setText('You have lost this one! Try again...');
+    fightResultFailText.setText('You have lost this round! Try again...');
   }
 }
 

@@ -1,7 +1,7 @@
 import config from '../config';
 
 function preload() {
-  this.load.image('skull', ASSETS_PATH + 'assets/intro-banner.png');
+  this.load.image('skull', ASSETS_PATH + 'assets/banner.png');
 }
 
 function create() {
@@ -12,8 +12,8 @@ function create() {
   ];
 
 
-  this.pressX = this.add.text(config.WIDTH / 2 - 150, config.HEIGHT - 50, 'PRESS X TO START', { fontSize: '30px', fill: '#000', backgroundColor: '#fff' });
-  this.instructions = this.add.text(config.WIDTH / 2 - 180, config.HEIGHT - 150, instructions, { fontSize: '20px', fill: '#000', backgroundColor: '#fff' });
+  this.pressX = this.add.text(config.WIDTH / 2 - 170, config.HEIGHT - 50, 'PRESS X TO START', { fontSize: '30px', fill: '#000', backgroundColor: '#fff' });
+  this.instructions = this.add.text(config.WIDTH / 2 - 200, config.HEIGHT - 150, instructions, { fontSize: '20px', fill: '#000', backgroundColor: '#fff' });
   this.blink = 1000;
   this.startKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.X);
 }

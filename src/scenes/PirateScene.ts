@@ -25,9 +25,9 @@ let currentScene;
 
 
 function preload() {
-  this.load.audio('overworld', [
-    'assets/music/overworld.ogg',
-    'assets/music/overworld.mp3'
+  this.load.audio('water', [
+    'assets/music/water.ogg',
+    'assets/music/water.mp3'
   ]);
   this.load.image('sky', ASSETS_PATH + 'assets/sky.png');
   this.load.image('treasure', ASSETS_PATH + 'assets/treasure.png');
@@ -39,7 +39,7 @@ function preload() {
 
 function create() {
   currentScene = this;
-  // addMusic.call(this);
+  addMusic();
   this.add.image(WIDTH / 2, HEIGHT / 2, 'sky').setScale(2);
 
   player = this.physics.add.sprite(50, 50, 'my-pirate');
@@ -257,7 +257,7 @@ function createStaticItem(group, key) {
 }
 
 function addMusic() {
-  const music = this.sound.add('overworld');
+  const music = currentScene.sound.add('water');
   music.play({ loop: true });
 }
 
